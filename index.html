@@ -17,7 +17,6 @@
   --green:#166534; --green-bg:#F0FDF4; --green-bd:#86EFAC;
   --amber:#92400E; --amber-bg:#FFFBEB; --amber-bd:#FCD34D;
   --blue:#1E40AF; --blue-bg:#EFF6FF; --blue-bd:#93C5FD;
-  --red:#991B1B; --red-bg:#FEF2F2; --red-bd:#FECACA;
   --r:8px; --rlg:12px;
   --shadow:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);
 }
@@ -29,7 +28,6 @@
     --green:#4ADE80; --green-bg:#052E16; --green-bd:#166534;
     --amber:#FCD34D; --amber-bg:#292110; --amber-bd:#92400E;
     --blue:#93C5FD; --blue-bg:#0F1A2E; --blue-bd:#1E40AF;
-    --red:#F87171; --red-bg:#1C0A0A; --red-bd:#7F1D1D;
     --shadow:0 1px 3px rgba(0,0,0,.3);
   }
 }
@@ -39,10 +37,8 @@ body{
   font-family:'IBM Plex Sans',system-ui,sans-serif;
   background:var(--bg);color:var(--text);
   font-size:15px;line-height:1.5;
-  max-width:480px;margin:0 auto;
-  min-height:100vh;
+  max-width:480px;margin:0 auto;min-height:100vh;
 }
-/* HEADER */
 .hdr{
   background:var(--text);color:var(--bg);
   padding:11px 16px;
@@ -51,244 +47,129 @@ body{
 }
 .logo{font-family:'IBM Plex Mono',monospace;font-size:16px;font-weight:500}
 .logo span{color:var(--wpp)}
-.hdr-badge{
-  font-size:10px;font-family:'IBM Plex Mono',monospace;
-  border:1px solid rgba(255,255,255,.2);border-radius:20px;
-  padding:3px 9px;color:rgba(255,255,255,.6);letter-spacing:.04em;
-}
-/* PROGRESS */
-.progress-wrap{
-  background:var(--surface2);
-  padding:10px 16px 12px;
-  border-bottom:1px solid var(--border);
-  position:sticky;top:44px;z-index:9;
-}
+.hdr-badge{font-size:10px;font-family:'IBM Plex Mono',monospace;border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:3px 9px;color:rgba(255,255,255,.6);letter-spacing:.04em}
+.progress-wrap{background:var(--surface2);padding:10px 16px 12px;border-bottom:1px solid var(--border);position:sticky;top:44px;z-index:9}
 .psteps{display:flex;gap:4px;margin-bottom:7px}
-.pstep{
-  flex:1;height:3px;background:var(--border);
-  border-radius:2px;transition:background .4s;
-}
+.pstep{flex:1;height:3px;background:var(--border);border-radius:2px;transition:background .4s}
 .pstep.done{background:var(--wpp)}
 .pstep.active{background:var(--text)}
-.plabel{
-  font-family:'IBM Plex Mono',monospace;font-size:10px;
-  color:var(--text3);text-transform:uppercase;letter-spacing:.06em;
-  display:flex;justify-content:space-between;align-items:center;
-}
-.skip-btn{
-  background:none;border:none;cursor:pointer;
-  font-family:'IBM Plex Mono',monospace;font-size:10px;
-  color:var(--text3);text-decoration:underline;
-  text-transform:uppercase;letter-spacing:.04em;
-}
-/* SCREEN */
+.plabel{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;display:flex;justify-content:space-between;align-items:center}
+.skip-btn{background:none;border:none;cursor:pointer;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text3);text-decoration:underline;text-transform:uppercase;letter-spacing:.04em}
 .screen{display:none;padding:16px;animation:fadeIn .35s ease}
 .screen.active{display:block}
 @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-/* STEP LABEL */
-.step-label{
-  font-family:'IBM Plex Mono',monospace;font-size:10px;
-  text-transform:uppercase;letter-spacing:.07em;
-  color:var(--text3);margin-bottom:12px;
-}
+.step-label{font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.07em;color:var(--text3);margin-bottom:12px}
 .step-label strong{color:var(--text2)}
-/* CARD */
-.card{
-  background:var(--surface);border:1px solid var(--border);
-  border-radius:var(--rlg);padding:14px 14px;
-  margin-bottom:12px;box-shadow:var(--shadow);
-}
-.card-title{
-  font-size:10px;font-family:'IBM Plex Mono',monospace;
-  text-transform:uppercase;letter-spacing:.07em;
-  color:var(--text3);margin-bottom:12px;
-}
-/* FIELD */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--rlg);padding:14px;margin-bottom:12px;box-shadow:var(--shadow)}
+.card-title{font-size:10px;font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.07em;color:var(--text3);margin-bottom:12px}
 .field{margin-bottom:10px}
-.field-label{
-  font-size:10px;font-family:'IBM Plex Mono',monospace;
-  color:var(--text3);text-transform:uppercase;letter-spacing:.06em;
-  display:block;margin-bottom:4px;
-}
-.field-value{
-  padding:8px 11px;border:1.5px solid var(--border);
-  border-radius:var(--r);background:var(--bg);
-  color:var(--text);font-size:14px;min-height:36px;
-  transition:border-color .3s;
-}
+.field-label{font-size:10px;font-family:'IBM Plex Mono',monospace;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:4px}
+.field-value{padding:8px 11px;border:1.5px solid var(--border);border-radius:var(--r);background:var(--bg);color:var(--text);font-size:14px;min-height:36px;transition:border-color .3s}
 .field-value.typing{border-color:var(--text)}
-.cursor{
-  display:inline-block;width:2px;height:13px;
-  background:var(--text);vertical-align:middle;
-  animation:blink .7s step-end infinite;margin-left:1px;
-}
+.cursor{display:inline-block;width:2px;height:13px;background:var(--text);vertical-align:middle;animation:blink .7s step-end infinite;margin-left:1px}
 @keyframes blink{50%{opacity:0}}
-/* ITEM ROW */
-.item-row{
-  display:flex;justify-content:space-between;align-items:center;
-  padding:7px 0;border-bottom:1px solid var(--border2);font-size:13px;
-}
+.item-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid var(--border2);font-size:13px}
 .item-row:last-child{border-bottom:none}
 .item-name{color:var(--text)}
 .item-val{font-family:'IBM Plex Mono',monospace;color:var(--text2)}
-/* TOTAL */
-.total-row{
-  display:flex;justify-content:space-between;align-items:center;
-  padding:9px 0 2px;font-weight:600;font-size:15px;
-  border-top:1.5px solid var(--border);margin-top:6px;
-}
+.total-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0 2px;font-weight:600;font-size:15px;border-top:1.5px solid var(--border);margin-top:6px}
 .total-mono{font-family:'IBM Plex Mono',monospace}
-/* BADGE */
-.badge{
-  display:inline-block;font-size:10px;font-family:'IBM Plex Mono',monospace;
-  border-radius:20px;padding:3px 9px;font-weight:500;
-}
+.badge{display:inline-block;font-size:10px;font-family:'IBM Plex Mono',monospace;border-radius:20px;padding:3px 9px;font-weight:500}
 .badge-green{background:var(--green-bg);color:var(--green);border:1px solid var(--green-bd)}
 .badge-amber{background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-bd)}
 .badge-blue{background:var(--blue-bg);color:var(--blue);border:1px solid var(--blue-bd)}
-.badge-red{background:var(--red-bg);color:var(--red);border:1px solid var(--red-bd)}
-/* BUTTON */
-.btn{
-  width:100%;padding:11px;border-radius:var(--r);border:none;
-  font-size:14px;font-weight:500;cursor:pointer;
-  font-family:'IBM Plex Sans',sans-serif;
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  transition:opacity .15s,transform .1s;margin-bottom:8px;
-}
+.btn{width:100%;padding:11px;border-radius:var(--r);border:none;font-size:14px;font-weight:500;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;display:flex;align-items:center;justify-content:center;gap:8px;transition:opacity .15s,transform .1s;margin-bottom:8px}
 .btn:active{transform:scale(.98);opacity:.9}
 .btn-primary{background:var(--text);color:var(--surface)}
 .btn-wpp{background:var(--wpp);color:#fff}
 .btn-outline{background:transparent;color:var(--text);border:1.5px solid var(--border)}
 .btn-pulse{animation:pulse 1.4s ease-in-out infinite}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.35)}50%{box-shadow:0 0 0 7px rgba(37,211,102,0)}}
-/* NOTIF */
-.notif{
-  display:flex;align-items:flex-start;gap:11px;
-  background:var(--surface);border:1px solid var(--border);
-  border-radius:var(--rlg);padding:13px;margin-bottom:12px;
-  animation:slideIn .4s ease;box-shadow:var(--shadow);
-}
+.notif{display:flex;align-items:flex-start;gap:11px;background:var(--surface);border:1px solid var(--border);border-radius:var(--rlg);padding:13px;margin-bottom:12px;animation:slideIn .4s ease;box-shadow:var(--shadow)}
 @keyframes slideIn{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:none}}
-.notif-icon{
-  width:36px;height:36px;border-radius:50%;flex-shrink:0;
-  display:flex;align-items:center;justify-content:center;font-size:17px;
-}
+.notif-icon{width:36px;height:36px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:17px}
 .notif-icon.green{background:var(--green-bg);color:var(--green)}
 .notif-icon.blue{background:var(--blue-bg);color:var(--blue)}
 .notif-icon.amber{background:var(--amber-bg);color:var(--amber)}
-.notif-icon.wpp{background:#F0FDF4;color:var(--wpp-dark)}
 .notif-text{font-size:13px;color:var(--text2)}
 .notif-text strong{color:var(--text);display:block;margin-bottom:2px;font-size:14px}
-/* WPP */
 .wpp-screen{background:#E5DDD5;border-radius:var(--rlg);padding:14px;margin-bottom:12px}
 @media(prefers-color-scheme:dark){.wpp-screen{background:#1A2530}}
-.wpp-contact{
-  display:flex;align-items:center;gap:10px;
-  background:var(--wpp-dark);color:#fff;
-  padding:10px 13px;border-radius:10px 10px 0 0;margin:-14px -14px 14px;
-}
-.wpp-avatar{
-  width:36px;height:36px;border-radius:50%;
-  background:rgba(255,255,255,.2);
-  display:flex;align-items:center;justify-content:center;
-  font-weight:600;font-size:14px;
-}
+.wpp-contact{display:flex;align-items:center;gap:10px;background:var(--wpp-dark);color:#fff;padding:10px 13px;border-radius:10px 10px 0 0;margin:-14px -14px 14px}
+.wpp-avatar{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-weight:600;font-size:13px}
 .wpp-name{font-weight:500;font-size:14px}
 .wpp-status{font-size:11px;opacity:.7}
-.wpp-bubble{
-  background:var(--wpp);color:#fff;
-  border-radius:12px 12px 2px 12px;
-  padding:10px 13px;font-size:13px;line-height:1.55;
-  margin-left:30px;animation:fadeIn .5s ease;
-  white-space:pre-line;
-}
+.wpp-bubble{background:var(--wpp);color:#fff;border-radius:12px 12px 2px 12px;padding:10px 13px;font-size:13px;line-height:1.55;margin-left:30px;animation:fadeIn .5s ease;white-space:pre-line}
 .wpp-time{font-size:10px;opacity:.7;text-align:right;margin-top:4px}
 .wpp-read{text-align:right;margin-top:5px;font-size:12px;color:var(--text3)}
-/* OS CARD */
 .os-meta{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
-.os-meta-item{}
 .os-meta-label{font-size:10px;font-family:'IBM Plex Mono',monospace;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px}
 .os-meta-val{font-size:13px;color:var(--text)}
-/* PAGAMENTO */
-.parc-row{
-  display:flex;justify-content:space-between;align-items:center;
-  padding:8px 0;border-bottom:1px solid var(--border2);font-size:13px;
-  transition:opacity .5s;
-}
+.parc-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border2);font-size:13px;transition:opacity .5s}
 .parc-row:last-child{border-bottom:none}
-/* ESTOQUE */
-.est-row{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:8px 0;border-bottom:1px solid var(--border2);font-size:13px;
-}
+.est-row{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border2);font-size:13px}
 .est-row:last-child{border-bottom:none}
-.est-info{}
 .est-name{font-weight:500;font-size:13px}
 .est-sub{font-size:11px;color:var(--text3)}
 .est-bar-wrap{display:flex;align-items:center;gap:8px}
 .est-bar{width:70px;height:5px;background:var(--border);border-radius:3px;overflow:hidden}
 .est-fill{height:100%;border-radius:3px;background:var(--green);transition:width .9s ease}
 .est-fill.low{background:var(--amber)}
-/* METRICS */
 .metrics-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:12px}
-.metric-card{
-  background:var(--surface);border:1px solid var(--border);
-  border-radius:var(--r);padding:11px 13px;box-shadow:var(--shadow);
-}
+.metric-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:11px 13px;box-shadow:var(--shadow)}
 .metric-label{font-size:10px;font-family:'IBM Plex Mono',monospace;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
 .metric-value{font-size:22px;font-weight:600;font-family:'IBM Plex Mono',monospace;color:var(--text)}
 .metric-sub{font-size:11px;color:var(--text3);margin-top:2px}
-/* DIVIDER */
 .divider{height:1px;background:var(--border2);margin:10px 0}
-/* CTA */
-.cta-box{
-  background:var(--text);color:var(--surface);
-  border-radius:var(--rlg);padding:22px 18px 20px;
-  text-align:center;margin-bottom:10px;
-}
+.cta-box{background:var(--text);color:var(--surface);border-radius:var(--rlg);padding:22px 18px 20px;text-align:center;margin-bottom:10px}
 .cta-title{font-size:20px;font-weight:600;margin-bottom:6px;line-height:1.2}
 .cta-sub{font-size:13px;opacity:.6;margin-bottom:18px;line-height:1.6}
-.cta-btn{
-  background:var(--wpp);color:#fff;border:none;
-  padding:13px 20px;border-radius:var(--r);
-  font-size:15px;font-weight:600;font-family:'IBM Plex Sans',sans-serif;
-  cursor:pointer;width:100%;
-  display:flex;align-items:center;justify-content:center;gap:9px;
-  transition:opacity .15s;
-}
+.features{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}
+.feat{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.06);border-radius:var(--r);padding:9px 12px;font-size:13px;opacity:.85}
+.feat i{font-size:16px;color:var(--wpp)}
+.cta-btn{background:var(--wpp);color:#fff;border:none;padding:13px 20px;border-radius:var(--r);font-size:15px;font-weight:600;font-family:'IBM Plex Sans',sans-serif;cursor:pointer;width:100%;display:flex;align-items:center;justify-content:center;gap:9px;transition:opacity .15s}
 .cta-btn:hover{opacity:.9}
 .cta-btn:active{transform:scale(.98)}
 .cta-price{font-size:11px;opacity:.4;margin-top:12px;font-family:'IBM Plex Mono',monospace}
-/* FEATURES */
-.features{display:flex;flex-direction:column;gap:7px;margin-bottom:14px}
-.feat{
-  display:flex;align-items:center;gap:10px;
-  background:rgba(255,255,255,.06);border-radius:var(--r);
-  padding:9px 12px;font-size:13px;opacity:.85;
-}
-.feat i{font-size:16px;color:var(--wpp)}
-/* INTRO */
-.intro-screen{
-  display:flex;flex-direction:column;align-items:center;
-  justify-content:center;min-height:60vh;
-  padding:32px 20px;text-align:center;
-}
-.intro-logo{
-  font-family:'IBM Plex Mono',monospace;font-size:28px;
-  font-weight:500;margin-bottom:8px;
-}
+
+/* SELETOR DE NICHO */
+.intro-wrap{padding:24px 16px 16px}
+.intro-logo{font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:500;text-align:center;margin-bottom:6px}
 .intro-logo span{color:var(--wpp)}
-.intro-sub{font-size:14px;color:var(--text2);margin-bottom:32px;line-height:1.6}
+.intro-sub{font-size:14px;color:var(--text2);text-align:center;margin-bottom:28px;line-height:1.6}
+.nicho-label{font-size:11px;font-family:'IBM Plex Mono',monospace;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:12px;text-align:center}
+.nicho-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px}
+.nicho-card{
+  background:var(--surface);border:2px solid var(--border);
+  border-radius:var(--rlg);padding:16px 12px;
+  text-align:center;cursor:pointer;
+  transition:border-color .2s,transform .1s,box-shadow .2s;
+  box-shadow:var(--shadow);
+}
+.nicho-card:hover{border-color:var(--text2);transform:translateY(-1px)}
+.nicho-card:active{transform:scale(.97)}
+.nicho-card.selected{border-color:var(--wpp);box-shadow:0 0 0 3px rgba(37,211,102,.15)}
+.nicho-icon{font-size:28px;margin-bottom:8px}
+.nicho-name{font-size:14px;font-weight:500;color:var(--text)}
+.nicho-desc{font-size:11px;color:var(--text3);margin-top:3px}
 .intro-btn{
-  background:var(--text);color:var(--surface);
-  border:none;padding:14px 28px;border-radius:var(--r);
+  width:100%;background:var(--text);color:var(--surface);
+  border:none;padding:13px;border-radius:var(--r);
   font-size:15px;font-weight:500;cursor:pointer;
   font-family:'IBM Plex Sans',sans-serif;
-  display:flex;align-items:center;gap:9px;
-  animation:pulse 1.4s ease-in-out infinite;
+  display:flex;align-items:center;justify-content:center;gap:9px;
+  opacity:.4;transition:opacity .2s,transform .1s;
+}
+.intro-btn.ready{opacity:1;animation:pulse 1.4s ease-in-out infinite}
+.intro-btn:active{transform:scale(.98)}
+.intro-hint{font-size:12px;color:var(--text3);font-family:'IBM Plex Mono',monospace;text-align:center;margin-top:10px}
+.nicho-chip{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--surface2);border:1px solid var(--border);
+  border-radius:20px;padding:3px 10px 3px 7px;
+  font-size:11px;color:var(--text2);font-family:'IBM Plex Mono',monospace;
   margin-bottom:14px;
 }
-.intro-hint{font-size:12px;color:var(--text3);font-family:'IBM Plex Mono',monospace}
 </style>
 </head>
 <body>
@@ -306,15 +187,35 @@ body{
   </div>
 </div>
 
-<!-- INTRO -->
+<!-- TELA 0: SELETOR DE NICHO -->
 <div class="screen active" id="s0">
-  <div class="intro-screen">
+  <div class="intro-wrap">
     <div class="intro-logo">serviço<span>fácil</span></div>
-    <div class="intro-sub">
-      Veja em 60 segundos como funciona —<br>
-      do orçamento ao recebimento, tudo no celular.
+    <div class="intro-sub">Veja como funciona na sua área —<br>do orçamento ao recebimento, no celular.</div>
+    <div class="nicho-label">Qual é o seu ramo?</div>
+    <div class="nicho-grid">
+      <div class="nicho-card" onclick="selectNicho('marcenaria')" id="nc-marcenaria">
+        <div class="nicho-icon">🪚</div>
+        <div class="nicho-name">Marcenaria</div>
+        <div class="nicho-desc">Móveis e projetos</div>
+      </div>
+      <div class="nicho-card" onclick="selectNicho('mecanica')" id="nc-mecanica">
+        <div class="nicho-icon">🔧</div>
+        <div class="nicho-name">Mecânica</div>
+        <div class="nicho-desc">Autos e motos</div>
+      </div>
+      <div class="nicho-card" onclick="selectNicho('construcao')" id="nc-construcao">
+        <div class="nicho-icon">🏗️</div>
+        <div class="nicho-name">Construção</div>
+        <div class="nicho-desc">Obras e reformas</div>
+      </div>
+      <div class="nicho-card" onclick="selectNicho('eletrica')" id="nc-eletrica">
+        <div class="nicho-icon">⚡</div>
+        <div class="nicho-name">Elétrica</div>
+        <div class="nicho-desc">Instalações</div>
+      </div>
     </div>
-    <button class="intro-btn" onclick="startDemo()">
+    <button class="intro-btn" id="intro-btn" onclick="startDemo()" disabled>
       <i class="ti ti-player-play"></i> Ver demonstração
     </button>
     <div class="intro-hint">sem cadastro · sem instalação</div>
@@ -361,30 +262,28 @@ body{
     <div class="notif-icon green"><i class="ti ti-file-check"></i></div>
     <div class="notif-text">
       <strong>PDF criado com sucesso</strong>
-      Orçamento Nº 047 — Armário Planejado — R$ 3.850,00
+      <span id="pdf-notif-sub"></span>
     </div>
   </div>
   <div class="card" style="padding:0;overflow:hidden">
     <div style="background:var(--surface2);padding:10px 14px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center">
-      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--text3)">ORÇAMENTO Nº 047</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--text3)" id="pdf-numero">ORÇAMENTO Nº 047</span>
       <span class="badge badge-amber">Aguardando</span>
     </div>
     <div style="padding:14px">
       <div style="display:flex;justify-content:space-between;margin-bottom:10px">
         <div>
           <div style="font-size:10px;color:var(--text3);font-family:'IBM Plex Mono',monospace;margin-bottom:3px">CLIENTE</div>
-          <div style="font-weight:500;font-size:14px">Marcenaria Silva & Filhos</div>
+          <div style="font-weight:500;font-size:14px" id="pdf-cliente"></div>
         </div>
         <div style="text-align:right">
           <div style="font-size:10px;color:var(--text3);font-family:'IBM Plex Mono',monospace;margin-bottom:3px">VALIDADE</div>
-          <div style="font-size:14px">15/06/2026</div>
+          <div style="font-size:14px" id="pdf-validade"></div>
         </div>
       </div>
       <div class="divider"></div>
-      <div class="item-row"><span class="item-name">Mão de obra</span><span class="item-val">R$ 1.800,00</span></div>
-      <div class="item-row"><span class="item-name">MDF BP 18mm (4 chapas)</span><span class="item-val">R$ 1.240,00</span></div>
-      <div class="item-row"><span class="item-name">Ferragens e puxadores</span><span class="item-val">R$ 810,00</span></div>
-      <div class="total-row"><span>Total</span><span class="total-mono">R$ 3.850,00</span></div>
+      <div id="pdf-itens"></div>
+      <div class="total-row"><span>Total</span><span class="total-mono" id="pdf-total"></span></div>
     </div>
   </div>
   <button class="btn btn-wpp btn-pulse" onclick="nextStep(3)">
@@ -400,9 +299,9 @@ body{
   <div class="step-label"><strong>3 / 6</strong> — Enviado pelo WhatsApp</div>
   <div class="wpp-screen">
     <div class="wpp-contact">
-      <div class="wpp-avatar">MS</div>
+      <div class="wpp-avatar" id="wpp-avatar">MS</div>
       <div>
-        <div class="wpp-name">Marcenaria Silva & Filhos</div>
+        <div class="wpp-name" id="wpp-contact-name"></div>
         <div class="wpp-status">online</div>
       </div>
       <i class="ti ti-brand-whatsapp" style="margin-left:auto;font-size:20px;opacity:.8"></i>
@@ -422,37 +321,37 @@ body{
   </div>
 </div>
 
-<!-- TELA 4: ORDEM DE SERVIÇO -->
+<!-- TELA 4: OS -->
 <div class="screen" id="s4">
   <div class="step-label"><strong>4 / 6</strong> — Ordem de Serviço aberta</div>
   <div class="notif">
     <div class="notif-icon blue"><i class="ti ti-check"></i></div>
     <div class="notif-text">
-      <strong>OS Nº 112 criada com 1 clique</strong>
-      Orçamento Nº 047 convertido automaticamente
+      <strong id="os-notif-title">OS Nº 112 criada com 1 clique</strong>
+      Orçamento convertido automaticamente
     </div>
   </div>
   <div class="card">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
-      <span style="font-weight:600;font-size:16px">OS #112</span>
+      <span style="font-weight:600;font-size:16px" id="os-numero">OS #112</span>
       <span class="badge badge-blue">Em andamento</span>
     </div>
     <div class="field">
       <span class="field-label">Cliente</span>
-      <div style="font-size:14px">Marcenaria Silva & Filhos</div>
+      <div style="font-size:14px" id="os-cliente"></div>
     </div>
     <div class="field">
       <span class="field-label">Serviço</span>
-      <div style="font-size:14px">Armário planejado 3 portas — quarto casal</div>
+      <div style="font-size:14px" id="os-servico"></div>
     </div>
     <div class="os-meta">
-      <div class="os-meta-item">
+      <div>
         <div class="os-meta-label">Abertura</div>
         <div class="os-meta-val">21/05/2026</div>
       </div>
-      <div class="os-meta-item">
+      <div>
         <div class="os-meta-label">Prazo</div>
-        <div class="os-meta-val">10/06/2026</div>
+        <div class="os-meta-val" id="os-prazo"></div>
       </div>
     </div>
   </div>
@@ -463,14 +362,14 @@ body{
         <div style="font-size:13px;font-weight:500">Entrada (50%)</div>
         <div style="font-size:11px;color:var(--text3)">21/05/2026 · Pix</div>
       </div>
-      <span class="badge badge-green">R$ 1.925,00 ✓</span>
+      <span class="badge badge-green" id="parc1-val">R$ 0,00 ✓</span>
     </div>
     <div class="parc-row" id="parc2" style="opacity:.35">
       <div>
         <div style="font-size:13px;font-weight:500">Saldo na entrega</div>
-        <div style="font-size:11px;color:var(--text3)">10/06/2026 · A receber</div>
+        <div style="font-size:11px;color:var(--text3)" id="os-prazo2"></div>
       </div>
-      <span class="badge badge-amber">R$ 1.925,00</span>
+      <span class="badge badge-amber" id="parc2-val">R$ 0,00</span>
     </div>
   </div>
   <button class="btn btn-primary btn-pulse" onclick="nextStep(5)">
@@ -485,7 +384,7 @@ body{
     <div class="notif-icon amber"><i class="ti ti-package"></i></div>
     <div class="notif-text">
       <strong>Materiais abatidos automaticamente</strong>
-      4 itens atualizados ao concluir a OS #112
+      <span id="est-notif-sub">4 itens atualizados ao concluir a OS</span>
     </div>
   </div>
   <div class="card">
@@ -523,11 +422,9 @@ body{
     </div>
   </div>
   <div class="cta-box">
+    <div class="nicho-chip" id="cta-chip"></div>
     <div class="cta-title">Seu negócio organizado</div>
-    <div class="cta-sub">
-      Do orçamento ao recebimento,<br>
-      tudo em um lugar. No celular.
-    </div>
+    <div class="cta-sub">Do orçamento ao recebimento,<br>tudo em um lugar. No celular.</div>
     <div class="features">
       <div class="feat"><i class="ti ti-file-text"></i> Orçamentos com PDF em 1 clique</div>
       <div class="feat"><i class="ti ti-brand-whatsapp"></i> Envio direto pelo WhatsApp</div>
@@ -541,36 +438,173 @@ body{
     <div class="cta-price">15 dias grátis · sem cartão · cancela quando quiser</div>
   </div>
   <button class="btn btn-outline" onclick="restart()" style="margin-bottom:24px">
-    <i class="ti ti-refresh"></i> Ver demonstração novamente
+    <i class="ti ti-refresh"></i> Escolher outro ramo
   </button>
 </div>
 
 <script>
-const STEPS_LABEL = [
-  'Preenchendo orçamento',
-  'Gerando PDF',
-  'Enviando WhatsApp',
-  'Convertendo em OS',
-  'Atualizando estoque',
-  'Dashboard'
-];
-const TOTAL_STEPS = 6;
+// ─── DADOS POR NICHO ───────────────────────────────────────────
+const NICHOS = {
+  marcenaria: {
+    icon: '🪚', label: 'Marcenaria',
+    cliente: 'Família Rodrigues',
+    servico: 'Armário planejado 3 portas — quarto casal',
+    prazo: '10/06/2026',
+    avatarIniciais: 'FR',
+    orcNum: 'ORÇAMENTO Nº 047',
+    osNum: 'OS #112',
+    osNotif: 'OS Nº 112 criada com 1 clique',
+    validade: '15/06/2026',
+    itens: [
+      ['Mão de obra','R$ 1.800,00'],
+      ['MDF BP 18mm (4 chapas)','R$ 1.240,00'],
+      ['Ferragens e puxadores','R$ 810,00'],
+    ],
+    total: 'R$ 3.850,00',
+    totalNum: 3850,
+    entrada: 'R$ 1.925,00',
+    saldo: 'R$ 1.925,00',
+    wppMsg: '📋 *ORÇAMENTO Nº 047 — ServiçoFácil*\n\nCliente: Família Rodrigues\nServiço: Armário planejado 3 portas\n\n• Mão de obra: R$ 1.800,00\n• MDF BP 18mm: R$ 1.240,00\n• Ferragens: R$ 810,00\n\n*Total: R$ 3.850,00*\nValidade: 15/06/2026\n\nQualquer dúvida, estou à disposição!',
+    estoque: [
+      {name:'MDF BP 18mm',dep:8,max:12,unit:'chapas',low:false},
+      {name:'Dobradiças 35mm',dep:18,max:30,unit:'un',low:false},
+      {name:'Puxadores inox',dep:4,max:15,unit:'un',low:true},
+      {name:'Parafusos M4',dep:160,max:260,unit:'un',low:false},
+    ],
+    estNotif: '4 itens atualizados ao concluir a OS',
+    kpis: {os:14, fat:18400, rec:11200, atr:2},
+  },
+  mecanica: {
+    icon: '🔧', label: 'Mecânica',
+    cliente: 'Transporte Becker Ltda',
+    servico: 'Revisão completa + troca de embreagem — VW Delivery',
+    prazo: '25/05/2026',
+    avatarIniciais: 'TB',
+    orcNum: 'ORÇAMENTO Nº 083',
+    osNum: 'OS #217',
+    osNotif: 'OS Nº 217 criada com 1 clique',
+    validade: '28/05/2026',
+    itens: [
+      ['Mão de obra','R$ 680,00'],
+      ['Kit embreagem VW','R$ 890,00'],
+      ['Filtros (ar, óleo, combustível)','R$ 210,00'],
+    ],
+    total: 'R$ 1.780,00',
+    totalNum: 1780,
+    entrada: 'R$ 890,00',
+    saldo: 'R$ 890,00',
+    wppMsg: '📋 *ORÇAMENTO Nº 083 — ServiçoFácil*\n\nCliente: Transporte Becker Ltda\nServiço: Revisão + troca de embreagem\n\n• Mão de obra: R$ 680,00\n• Kit embreagem VW: R$ 890,00\n• Filtros: R$ 210,00\n\n*Total: R$ 1.780,00*\nValidade: 28/05/2026\n\nQualquer dúvida, estou à disposição!',
+    estoque: [
+      {name:'Kit embreagem VW',dep:2,max:5,unit:'un',low:true},
+      {name:'Filtro de óleo',dep:8,max:20,unit:'un',low:false},
+      {name:'Filtro de ar',dep:6,max:20,unit:'un',low:false},
+      {name:'Óleo motor 15W40',dep:12,max:30,unit:'litros',low:false},
+    ],
+    estNotif: '4 itens atualizados ao concluir a OS',
+    kpis: {os:22, fat:31600, rec:24800, atr:3},
+  },
+  construcao: {
+    icon: '🏗️', label: 'Construção Civil',
+    cliente: 'Dr. Antônio e Sra. Carla Mendes',
+    servico: 'Reforma completa banheiro suíte — troca de revestimento e louças',
+    prazo: '30/06/2026',
+    avatarIniciais: 'AM',
+    orcNum: 'ORÇAMENTO Nº 019',
+    osNum: 'OS #058',
+    osNotif: 'OS Nº 058 criada com 1 clique',
+    validade: '05/06/2026',
+    itens: [
+      ['Mão de obra (8 dias)','R$ 3.200,00'],
+      ['Cerâmica e porcelanato','R$ 2.100,00'],
+      ['Louças e metais','R$ 1.850,00'],
+    ],
+    total: 'R$ 7.150,00',
+    totalNum: 7150,
+    entrada: 'R$ 3.575,00',
+    saldo: 'R$ 3.575,00',
+    wppMsg: '📋 *ORÇAMENTO Nº 019 — ServiçoFácil*\n\nCliente: Dr. Antônio e Sra. Carla Mendes\nServiço: Reforma banheiro suíte\n\n• Mão de obra: R$ 3.200,00\n• Cerâmica e porcelanato: R$ 2.100,00\n• Louças e metais: R$ 1.850,00\n\n*Total: R$ 7.150,00*\nValidade: 05/06/2026\n\nQualquer dúvida, estou à disposição!',
+    estoque: [
+      {name:'Cimento CP-II',dep:18,max:40,unit:'sacos',low:false},
+      {name:'Porcelanato 60x60',dep:24,max:50,unit:'m²',low:false},
+      {name:'Rejunte branco',dep:6,max:20,unit:'sacos',low:true},
+      {name:'Argamassa AC-III',dep:10,max:30,unit:'sacos',low:false},
+    ],
+    estNotif: '4 itens atualizados ao concluir a OS',
+    kpis: {os:9, fat:52300, rec:38100, atr:1},
+  },
+  eletrica: {
+    icon: '⚡', label: 'Elétrica',
+    cliente: 'Supermercado Pinheiro',
+    servico: 'Instalação quadro de distribuição + iluminação LED — galpão',
+    prazo: '15/06/2026',
+    avatarIniciais: 'SP',
+    orcNum: 'ORÇAMENTO Nº 061',
+    osNum: 'OS #134',
+    osNotif: 'OS Nº 134 criada com 1 clique',
+    validade: '20/06/2026',
+    itens: [
+      ['Mão de obra','R$ 1.400,00'],
+      ['Quadro elétrico + disjuntores','R$ 1.120,00'],
+      ['Luminárias LED 40W (12 un)','R$ 780,00'],
+    ],
+    total: 'R$ 3.300,00',
+    totalNum: 3300,
+    entrada: 'R$ 1.650,00',
+    saldo: 'R$ 1.650,00',
+    wppMsg: '📋 *ORÇAMENTO Nº 061 — ServiçoFácil*\n\nCliente: Supermercado Pinheiro\nServiço: Quadro elétrico + LED galpão\n\n• Mão de obra: R$ 1.400,00\n• Quadro + disjuntores: R$ 1.120,00\n• Luminárias LED: R$ 780,00\n\n*Total: R$ 3.300,00*\nValidade: 20/06/2026\n\nQualquer dúvida, estou à disposição!',
+    estoque: [
+      {name:'Disjuntores 20A',dep:14,max:30,unit:'un',low:false},
+      {name:'Luminária LED 40W',dep:8,max:20,unit:'un',low:false},
+      {name:'Cabo PP 2x4mm',dep:30,max:100,unit:'metros',low:true},
+      {name:'Eletroduto 3/4"',dep:18,max:50,unit:'metros',low:false},
+    ],
+    estNotif: '4 itens atualizados ao concluir a OS',
+    kpis: {os:17, fat:24800, rec:19300, atr:2},
+  },
+};
+
+// ─── ESTADO ───────────────────────────────────────────────────
+let nicho = null;
+let nd = null;
 let currentStep = 0;
 let timers = [];
 
-function T(fn, ms){ timers.push(setTimeout(fn, ms)); }
-function clearT(){ timers.forEach(clearTimeout); timers = []; }
+function T(fn,ms){ timers.push(setTimeout(fn,ms)); }
+function clearT(){ timers.forEach(clearTimeout); timers=[]; }
+
+// ─── SELETOR ──────────────────────────────────────────────────
+function selectNicho(n){
+  nicho = n;
+  nd = NICHOS[n];
+  document.querySelectorAll('.nicho-card').forEach(c=>c.classList.remove('selected'));
+  document.getElementById('nc-'+n).classList.add('selected');
+  const btn = document.getElementById('intro-btn');
+  btn.disabled = false;
+  btn.classList.add('ready');
+}
+
+function startDemo(){
+  if(!nicho) return;
+  document.getElementById('progress-wrap').style.display='block';
+  nextStep(1);
+}
+
+// ─── NAVEGAÇÃO ────────────────────────────────────────────────
+const STEPS_LABEL=[
+  'Preenchendo orçamento','Gerando PDF','Enviando WhatsApp',
+  'Convertendo em OS','Atualizando estoque','Dashboard'
+];
 
 function setupBar(step){
-  const bar = document.getElementById('psteps');
-  bar.innerHTML = '';
-  for(let i=1;i<=TOTAL_STEPS;i++){
-    const d = document.createElement('div');
-    d.className = 'pstep' + (i<step?' done':i===step?' active':'');
-    d.id = 'ps'+i;
+  const bar=document.getElementById('psteps');
+  bar.innerHTML='';
+  for(let i=1;i<=6;i++){
+    const d=document.createElement('div');
+    d.className='pstep'+(i<step?' done':i===step?' active':'');
+    d.id='ps'+i;
     bar.appendChild(d);
   }
-  document.getElementById('plabel-text').textContent = STEPS_LABEL[step-1] || '';
+  document.getElementById('plabel-text').textContent=STEPS_LABEL[step-1]||'';
 }
 
 function showScreen(n){
@@ -578,14 +612,9 @@ function showScreen(n){
   document.getElementById('s'+n).classList.add('active');
 }
 
-function startDemo(){
-  document.getElementById('progress-wrap').style.display='block';
-  nextStep(1);
-}
-
 function nextStep(n){
   clearT();
-  currentStep = n;
+  currentStep=n;
   setupBar(n);
   showScreen(n);
   if(n===1) runS1();
@@ -596,63 +625,61 @@ function nextStep(n){
   else if(n===6) runS6();
 }
 
+// ─── HELPERS ──────────────────────────────────────────────────
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function pad(n){ return n.toString().padStart(2,'0'); }
+
 function typeInto(elId, text, speed, cb){
-  const el = document.getElementById(elId);
+  const el=document.getElementById(elId);
   if(!el){ if(cb) cb(); return; }
   el.classList.add('typing');
-  el.innerHTML = '<span class="cursor"></span>';
+  el.innerHTML='<span class="cursor"></span>';
   let i=0;
   function tick(){
     if(i<=text.length){
-      el.innerHTML = escHtml(text.slice(0,i))+'<span class="cursor"></span>';
+      el.innerHTML=esc(text.slice(0,i))+'<span class="cursor"></span>';
       i++;
-      timers.push(setTimeout(tick, speed));
+      timers.push(setTimeout(tick,speed));
     } else {
       el.classList.remove('typing');
-      el.innerHTML = escHtml(text);
+      el.innerHTML=esc(text);
       if(cb) cb();
     }
   }
   tick();
 }
 
-function escHtml(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-
+// ─── TELA 1: ORÇAMENTO ────────────────────────────────────────
 function runS1(){
-  document.getElementById('f-cliente').innerHTML='<span class="cursor"></span>';
-  document.getElementById('f-servico').innerHTML='<span class="cursor"></span>';
-  document.getElementById('f-prazo').innerHTML='<span class="cursor"></span>';
+  ['f-cliente','f-servico','f-prazo'].forEach(id=>{
+    document.getElementById(id).innerHTML='<span class="cursor"></span>';
+  });
   document.getElementById('itens-container').innerHTML='';
   document.getElementById('total-row').style.display='none';
   document.getElementById('btn1-wrap').style.display='none';
 
-  T(()=>typeInto('f-cliente','Marcenaria Silva & Filhos',42,()=>{
-    T(()=>typeInto('f-servico','Armário planejado 3 portas — quarto casal',28,()=>{
-      T(()=>typeInto('f-prazo','10/06/2026',60,()=>{
-        T(()=>addItens(), 350);
+  T(()=>typeInto('f-cliente',nd.cliente,42,()=>{
+    T(()=>typeInto('f-servico',nd.servico,28,()=>{
+      T(()=>typeInto('f-prazo',nd.prazo,65,()=>{
+        T(()=>addItens(),350);
       }),250);
     }),300);
   }),500);
 }
 
 function addItens(){
-  const itens=[
-    ['Mão de obra','R$ 1.800,00'],
-    ['MDF BP 18mm (4 chapas)','R$ 1.240,00'],
-    ['Ferragens e puxadores','R$ 810,00'],
-  ];
   const cont=document.getElementById('itens-container');
-  itens.forEach((item,idx)=>{
+  nd.itens.forEach((item,idx)=>{
     T(()=>{
       const row=document.createElement('div');
       row.className='item-row';
       row.style.animation='slideIn .3s ease';
-      row.innerHTML='<span class="item-name">'+escHtml(item[0])+'</span><span class="item-val">'+item[1]+'</span>';
+      row.innerHTML='<span class="item-name">'+esc(item[0])+'</span><span class="item-val">'+esc(item[1])+'</span>';
       cont.appendChild(row);
-      if(idx===itens.length-1){
+      if(idx===nd.itens.length-1){
         T(()=>{
           document.getElementById('total-row').style.display='flex';
-          document.getElementById('total-val').textContent='R$ 3.850,00';
+          document.getElementById('total-val').textContent=nd.total;
           T(()=>document.getElementById('btn1-wrap').style.display='block',400);
         },300);
       }
@@ -660,19 +687,36 @@ function addItens(){
   });
 }
 
-function runS2(){}
+// ─── TELA 2: PDF ──────────────────────────────────────────────
+function runS2(){
+  document.getElementById('pdf-notif-sub').textContent=nd.orcNum+' — '+nd.total;
+  document.getElementById('pdf-numero').textContent=nd.orcNum;
+  document.getElementById('pdf-cliente').textContent=nd.cliente;
+  document.getElementById('pdf-validade').textContent=nd.validade;
+  document.getElementById('pdf-total').textContent=nd.total;
+  const cont=document.getElementById('pdf-itens');
+  cont.innerHTML='';
+  nd.itens.forEach(item=>{
+    const row=document.createElement('div');
+    row.className='item-row';
+    row.innerHTML='<span class="item-name">'+esc(item[0])+'</span><span class="item-val">'+esc(item[1])+'</span>';
+    cont.appendChild(row);
+  });
+}
 
+// ─── TELA 3: WHATSAPP ─────────────────────────────────────────
 function runS3(){
   document.getElementById('wpp-bubble').style.display='none';
   document.getElementById('wpp-read').style.display='none';
   document.getElementById('btn3-wrap').style.display='none';
+  document.getElementById('wpp-avatar').textContent=nd.avatarIniciais;
+  document.getElementById('wpp-contact-name').textContent=nd.cliente;
 
   T(()=>{
     document.getElementById('wpp-bubble').style.display='block';
-    const msg = '📋 *ORÇAMENTO Nº 047 — ServiçoFácil*\n\nCliente: Marcenaria Silva & Filhos\nServiço: Armário planejado 3 portas\n\n• Mão de obra: R$ 1.800,00\n• MDF BP 18mm: R$ 1.240,00\n• Ferragens: R$ 810,00\n\n*Total: R$ 3.850,00*\nValidade: 15/06/2026\n\nQualquer dúvida, estou à disposição!';
-    document.getElementById('wpp-text').textContent = msg;
-    const now = new Date();
-    document.getElementById('wpp-time').textContent = pad(now.getHours())+':'+pad(now.getMinutes());
+    document.getElementById('wpp-text').textContent=nd.wppMsg;
+    const now=new Date();
+    document.getElementById('wpp-time').textContent=pad(now.getHours())+':'+pad(now.getMinutes());
     T(()=>{
       document.getElementById('wpp-read').style.display='block';
       T(()=>document.getElementById('btn3-wrap').style.display='block',700);
@@ -680,31 +724,32 @@ function runS3(){
   },600);
 }
 
-function pad(n){ return n.toString().padStart(2,'0'); }
-
+// ─── TELA 4: OS ───────────────────────────────────────────────
 function runS4(){
+  document.getElementById('os-notif-title').textContent=nd.osNotif;
+  document.getElementById('os-numero').textContent=nd.osNum;
+  document.getElementById('os-cliente').textContent=nd.cliente;
+  document.getElementById('os-servico').textContent=nd.servico;
+  document.getElementById('os-prazo').textContent=nd.prazo;
+  document.getElementById('os-prazo2').textContent=nd.prazo+' · A receber';
+  document.getElementById('parc1-val').textContent=nd.entrada+' ✓';
+  document.getElementById('parc2-val').textContent=nd.saldo;
   document.getElementById('parc2').style.opacity='0.35';
-  T(()=>{
-    document.getElementById('parc2').style.opacity='1';
-  },1200);
+  T(()=>{ document.getElementById('parc2').style.opacity='1'; },1200);
 }
 
+// ─── TELA 5: ESTOQUE ──────────────────────────────────────────
 function runS5(){
-  const itens=[
-    {name:'MDF BP 18mm',dep:8,max:12,unit:'chapas',low:false},
-    {name:'Dobradiças',dep:18,max:30,unit:'un',low:false},
-    {name:'Puxadores inox',dep:4,max:15,unit:'un',low:true},
-    {name:'Parafusos M4',dep:160,max:260,unit:'un',low:false},
-  ];
+  document.getElementById('est-notif-sub').textContent=nd.estNotif;
   const cont=document.getElementById('estoque-list');
   cont.innerHTML='';
-  itens.forEach((it,idx)=>{
+  nd.estoque.forEach((it,idx)=>{
     const pct=Math.round((it.dep/it.max)*100);
     const row=document.createElement('div');
     row.className='est-row';
     row.innerHTML=`
-      <div class="est-info">
-        <div class="est-name">${escHtml(it.name)}</div>
+      <div>
+        <div class="est-name">${esc(it.name)}</div>
         <div class="est-sub">${it.dep} ${it.unit} restantes</div>
       </div>
       <div class="est-bar-wrap">
@@ -714,32 +759,37 @@ function runS5(){
         <span class="badge ${it.low?'badge-amber':'badge-green'}" style="font-size:10px">${it.dep}</span>
       </div>`;
     cont.appendChild(row);
-    T(()=>{ document.getElementById('eb'+idx).style.width=pct+'%'; }, 150+idx*320);
+    T(()=>{ document.getElementById('eb'+idx).style.width=pct+'%'; },150+idx*320);
   });
 }
 
-function animCount(elId, target, prefix, dur){
-  const el=document.getElementById(elId);
-  if(!el) return;
-  const steps=35;
-  let step=0;
-  function tick(){
-    step++;
-    const cur=Math.round((target/steps)*step);
-    el.textContent = prefix + (prefix==='R$ ' ? cur.toLocaleString('pt-BR') : cur);
-    if(step<steps) timers.push(setTimeout(tick, dur/steps));
-    else el.textContent = prefix + (prefix==='R$ ' ? target.toLocaleString('pt-BR') : target);
-  }
-  tick();
-}
-
+// ─── TELA 6: DASHBOARD ────────────────────────────────────────
 function runS6(){
-  T(()=>animCount('m1',14,'',700),200);
-  T(()=>animCount('m2',18400,'R$ ',900),400);
-  T(()=>animCount('m3',11200,'R$ ',900),600);
-  T(()=>animCount('m4',2,'',500),800);
+  const chip=document.getElementById('cta-chip');
+  chip.innerHTML=nd.icon+' '+nd.label;
+
+  function animCount(elId,target,prefix,dur){
+    const el=document.getElementById(elId);
+    if(!el) return;
+    const steps=35; let step=0;
+    function tick(){
+      step++;
+      const cur=Math.round((target/steps)*step);
+      el.textContent=prefix+(prefix==='R$ '?cur.toLocaleString('pt-BR'):cur);
+      if(step<steps) timers.push(setTimeout(tick,dur/steps));
+      else el.textContent=prefix+(prefix==='R$ '?target.toLocaleString('pt-BR'):target);
+    }
+    tick();
+  }
+
+  const k=nd.kpis;
+  T(()=>animCount('m1',k.os,'',700),200);
+  T(()=>animCount('m2',k.fat,'R$ ',900),400);
+  T(()=>animCount('m3',k.rec,'R$ ',900),600);
+  T(()=>animCount('m4',k.atr,'',500),800);
 }
 
+// ─── SKIP / RESTART ───────────────────────────────────────────
 function skipToEnd(){
   clearT();
   currentStep=6;
@@ -747,15 +797,16 @@ function skipToEnd(){
     const p=document.getElementById('ps'+i);
     if(p){p.classList.remove('active');p.classList.add('done');}
   }
-  setupBar(6);
-  showScreen(6);
-  runS6();
+  setupBar(6); showScreen(6); runS6();
 }
 
 function restart(){
   clearT();
-  currentStep=0;
+  nicho=null; nd=null;
   document.getElementById('progress-wrap').style.display='none';
+  document.querySelectorAll('.nicho-card').forEach(c=>c.classList.remove('selected'));
+  const btn=document.getElementById('intro-btn');
+  btn.disabled=true; btn.classList.remove('ready');
   showScreen(0);
 }
 
