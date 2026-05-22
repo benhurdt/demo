@@ -139,6 +139,7 @@ body{
 .intro-sub{font-size:14px;color:var(--text2);text-align:center;margin-bottom:28px;line-height:1.6}
 .nicho-label{font-size:11px;font-family:'IBM Plex Mono',monospace;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:12px;text-align:center}
 .nicho-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px}
+.nicho-grid .nicho-card:last-child:nth-child(odd){grid-column:1/-1;max-width:calc(50% - 5px);margin:0 auto;}
 .nicho-card{
   background:var(--surface);border:2px solid var(--border);
   border-radius:var(--rlg);padding:16px 12px;
@@ -213,6 +214,11 @@ body{
         <div class="nicho-icon">⚡</div>
         <div class="nicho-name">Elétrica</div>
         <div class="nicho-desc">Instalações</div>
+      </div>
+      <div class="nicho-card" onclick="selectNicho('informatica')" id="nc-informatica">
+        <div class="nicho-icon">💻</div>
+        <div class="nicho-name">Informática</div>
+        <div class="nicho-desc">Suporte e manutenção</div>
       </div>
     </div>
     <button class="intro-btn" id="intro-btn" onclick="startDemo()" disabled>
@@ -560,6 +566,35 @@ const NICHOS = {
     ],
     estNotif: '4 itens atualizados ao concluir a OS',
     kpis: {os:17, fat:24800, rec:19300, atr:2},
+  },
+  informatica: {
+    icon: '💻', label: 'Informática',
+    cliente: 'Escritório Contábil Souza & Lima',
+    servico: 'Formatação + upgrade SSD + instalação de programas — 3 notebooks',
+    prazo: '27/05/2026',
+    avatarIniciais: 'SL',
+    orcNum: 'ORÇAMENTO Nº 034',
+    osNum: 'OS #089',
+    osNotif: 'OS Nº 089 criada com 1 clique',
+    validade: '30/05/2026',
+    itens: [
+      ['Mão de obra (3 equipamentos)','R$ 420,00'],
+      ['SSD 480GB Kingston (3 un)','R$ 510,00'],
+      ['Licenças Office 365 (3 un)','R$ 390,00'],
+    ],
+    total: 'R$ 1.320,00',
+    totalNum: 1320,
+    entrada: 'R$ 660,00',
+    saldo: 'R$ 660,00',
+    wppMsg: '📋 *ORÇAMENTO Nº 034 — ServiçoFácil*\n\nCliente: Escritório Contábil Souza & Lima\nServiço: Formatação + upgrade SSD (3 notebooks)\n\n• Mão de obra: R$ 420,00\n• SSD 480GB (3 un): R$ 510,00\n• Office 365 (3 licenças): R$ 390,00\n\n*Total: R$ 1.320,00*\nValidade: 30/05/2026\n\nQualquer dúvida, estou à disposição!',
+    estoque: [
+      {name:'SSD 480GB Kingston',dep:4,max:10,unit:'un',low:false},
+      {name:'Memória RAM 8GB DDR4',dep:3,max:10,unit:'un',low:true},
+      {name:'Cabo SATA III',dep:8,max:20,unit:'un',low:false},
+      {name:'Pasta térmica',dep:6,max:15,unit:'un',low:false},
+    ],
+    estNotif: '4 itens atualizados ao concluir a OS',
+    kpis: {os:28, fat:16400, rec:13100, atr:1},
   },
 };
 
